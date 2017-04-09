@@ -35,3 +35,23 @@ bool ListInsert(SqList &L, int i, ElemType e){
   L.length++;
   return true;
 }
+
+// list delete operation come true
+bool ListDelete(SqList &L, int i, int &e){
+  if (i<1 || i>L.length)
+    return false;
+  e = L.data[i-1];
+  for(j=i;j<L.length;j++)
+    L.data[j-1] = L.data[j];
+  L.length--;
+  return true;
+}
+
+// Locate list Elem ,return e
+int LocateElem(SqList L, ElemType e){
+  int i;
+  for(i=0,i<L.length;i++)
+    if(L.length == e)
+      return i+1;
+  return 0;
+}
